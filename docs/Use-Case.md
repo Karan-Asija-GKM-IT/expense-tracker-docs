@@ -1,126 +1,95 @@
-**Use Case Descriptions**
+# Technical Use Cases
 
-**Use Case 1 — Register Account**
+Below are the detailed technical use cases for the **Personal Expense Tracker** application.
 
-**Actor:** User
+---
 
-**Pre-condition:** No existing account.
+## 1. Register Account
 
-**Main Flow:**
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Actor** | User |
+| **Pre-condition** | No existing account. |
+| **Main Flow** | 1. User clicks “Register”.<br>2. Inputs email & password.<br>3. System validates and stores credentials. |
+| **Post-condition** | Account created; redirect to login page. |
 
-1.  User clicks “Register”.
-    
-2.  Inputs email & password.
-    
-3.  System validates and stores credentials.
-    
-**Post-condition:** Account created; redirect to login page.
+---
 
-**Use Case 2 — Login**
+## 2. Login
 
-**Actor:** User
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Actor** | User |
+| **Pre-condition** | Valid credentials exist. |
+| **Main Flow** | 1. User enters email and password.<br>2. System authenticates.<br>3. Redirect to Dashboard. |
+| **Post-condition** | User session started. |
 
-**Pre-condition:** Valid credentials exist.
+---
 
-**Main Flow:**
+## 3. View Dashboard
 
-1.  User enters email and password.
-    
-2.  System authenticates.
-    
-3.  Redirect to Dashboard.
-    
-**Post-condition:** User session started.
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Actor** | User |
+| **Pre-condition** | Logged in. |
+| **Main Flow** | 1. System loads Overview Dashboard.<br>2. Displays income, weekly expenses (pie chart), last month summary, and recent transactions. |
+| **Post-condition** | User views financial snapshot. |
 
-**Use Case 3 — View Dashboard**
+---
 
-**Actor:** User
+## 4. Add Income/Expense
 
-**Pre-condition:** Logged in.
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Actor** | User |
+| **Pre-condition** | Logged in. |
+| **Main Flow** | 1. Navigate to Transactions page.<br>2. Click ➕ (Add Income) or ➖ (Add Expense).<br>3. Enter details (amount, category, date, description).<br>4. Click “Save”. |
+| **Post-condition** | Transaction recorded and dashboard updated. |
 
-**Main Flow:**
+---
 
-1.  System loads Overview Dashboard.
-    
-2.  Displays income, weekly expenses (pie chart), last month summary, and recent transactions.
-    
+## 5. Edit or Delete Transaction
 
-**Post-condition:** User views financial snapshot.
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Actor** | User |
+| **Pre-condition** | Transaction exists. |
+| **Main Flow** | 1. Select transaction.<br>2. Edit details → Save OR Click Delete → Confirm.<br>3. System updates or removes record. |
+| **Post-condition** | Data updated in database and UI. |
 
-**Use Case 4 — Add Income/Expense**
+---
 
-**Actor:** User
+## 6. Filter Transactions
 
-**Pre-condition:** Logged in.
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Actor** | User |
+| **Pre-condition** | Transaction list available. |
+| **Main Flow** | 1. Apply filter (date range or month).<br>2. System returns filtered records. |
+| **Post-condition** | Filtered list displayed. |
 
-**Main Flow:**
+---
 
-1.  Navigate to Transactions page.
-    
-2.  Click ➕ (Add Income) or ➖ (Add Expense).
-    
-3.  Enter details (amount, category, date, description).
-    
-4.  Click “Save”.
+## 7. Generate Monthly Report
 
-**Post-condition:** Transaction recorded and dashboard updated.
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Actor** | User |
+| **Pre-condition** | At least one month’s transactions. |
+| **Main Flow** | 1. Navigate to Import/Export.<br>2. Select month.<br>3. System fetches and aggregates data.<br>4. PDF report generated for download. |
+| **Post-condition** | Report saved locally or viewed on-screen. |
 
-**Use Case 5 — Edit or Delete Transaction**
+---
 
-**Actor:** User
+## 8. Logout
 
-**Pre-condition:** Transaction exists.
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Actor** | User |
+| **Pre-condition** | Active session. |
+| **Main Flow** | 1. Click “Sign Out”.<br>2. System terminates session and redirects to login. |
+| **Post-condition** | User logged out securely. |
 
-**Main Flow:**
+---
 
-1.  Select transaction.
-    
-2.  Edit details → Save OR Click Delete → Confirm.
-    
-3.  System updates or removes record.
-    
-**Post-condition:** Data updated in database and UI.
-
-**Use Case 6 — Filter Transactions**
-
-**Actor:** User
-
-**Pre-condition:** Transaction list available.
-
-**Main Flow:**
-
-1.  Apply filter (date range or month).
-    
-2.  System returns filtered records.
-    
-**Post-condition:** Filtered list displayed.
-
-**Use Case 7 — Generate Monthly Report**
-
-**Actor:** User
-
-**Pre-condition:** At least one month’s transactions.
-
-**Main Flow:**
-
-1.  Navigate to Import/Export.
-    
-2.  Select month.
-    
-3.  System fetches and aggregates data.
-    
-4.  PDF report generated for download.
-    
-**Post-condition:** Report saved locally / viewed on-screen.
-
-**Use Case 8 — Logout**
-
-**Actor:** User
-
-**Main Flow:**
-
-1.  Click “Sign Out”.
-    
-2\. System terminates session and redirects to login.
-
-**Post-condition:** User logged out securely.
+**Next:** [System Architecture →](architecture.md)

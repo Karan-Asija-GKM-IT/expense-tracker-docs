@@ -1,6 +1,6 @@
 site_name: Expense Tracker App
 nav:
-  - Introduction: index.md
+  - Functional and Use Case Documentation: index.md
   - Requirement: Requirements.md
   - Scope: scope.md
   - Use Case: Use-Case.md
