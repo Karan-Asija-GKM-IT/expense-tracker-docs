@@ -1,0 +1,8 @@
+site_name: Expense Tracker App
+nav:
+  - Introduction: index.md
+  - Requirement: Requirements.md
+  - Scope: scope.md
+  - Use Case: Use-Case.md
+theme: 
+  name: material
