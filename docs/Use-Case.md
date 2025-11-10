@@ -95,11 +95,12 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 ## 5. Add Income/Expense
 
 | **Attribute** | **Description** |
-|----------------|-----------------|
+|:---------------|:----------------|
 | **Actor** | User |
 | **Pre-condition** | Logged in. |
-| **Main Flow** | 1. Navigate to Transactions page.<br>2. Click ➕ (Add Income) or ➖ (Add Expense).<br>3. Enter details (amount, category, date, description).<br>4. Click “Save”. |
+| **Main Flow** | 1. Navigate to Transactions page.<br>2. Click **(Add Transaction)**.<br>3. Select **type** (Income or Expense).<br>4. Enter details (amount, category, date, description).<br>5. Click **“Save.”** |
 | **Post-condition** | Transaction recorded and dashboard updated. |
+
 
 ---
 
@@ -118,8 +119,8 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 | **Attribute** | **Description** |
 |----------------|-----------------|
 | **Actor** | User |
-| **Pre-condition** | Transaction exists. |
-| **Main Flow** | 1. Select transaction.<br>2. Edit details → Save OR Click Delete → Confirm.<br>3. System updates or removes record. |
+| **Pre-condition** | User is on the Transactions page with an existing transaction list. |
+| **Main Flow** | 1. Select transaction.<br>2. Edit details → Edit OR Click Delete → Confirm.<br>3. System updates or removes record. |
 | **Post-condition** | Data updated in database and UI. |
 
 ---
@@ -129,9 +130,10 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 | **Attribute** | **Description** |
 |----------------|-----------------|
 | **Actor** | User |
-| **Pre-condition** | Transaction list available. |
-| **Main Flow** | 1. Apply filter (date range or month).<br>2. System returns filtered records. |
-| **Post-condition** | Filtered list displayed. |
+| **Pre-condition** | User is on the Transactions page with an existing transaction list. |
+| **Main Flow** | 1. On the Transactions page, filter the transaction based on category.<br>2. System automatically updates and displays the filtered transactions. |
+| **Post-condition** | Filtered transaction list displayed on the Transactions page. |
+
 
 ---
 

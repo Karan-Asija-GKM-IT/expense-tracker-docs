@@ -51,11 +51,12 @@ A persistent left-side menu providing quick access to main modules:
 
 ### 6. Transactions Page
 
-*   Dedicated page to view, add, and manage transactions.
-    
-*   **Add Income (➕)** and **Add Expense (➖)** buttons for quick entry.
-    
-*   **Filter Functionality** to view older or category-specific transactions.
+* Dedicated page to view, add, and manage all transactions.
+
+* A single **Add Transaction** button allows users to record both income and expense entries by selecting the transaction type.
+
+* Includes **Filter Functionality** to view older transactions.
+
     
 
 ### 7. Report Generation
