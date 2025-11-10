@@ -11,12 +11,11 @@ Many individuals face challenges in tracking their daily expenses and maintainin
 ### Project Overview
 
 The **Personal Expense Tracker** is a **web-based and mobile-accessible application** that enables users to manage income and expenses effectively through an **intuitive dashboard interface**.  
-It provides a **central overview page** displaying monthly income, weekly expenses (with a pie chart), last month’s comparison, and recent transactions.  
+It provides a **central overview page** displaying monthly income, monthly expenses (with a pie chart), last month’s pie chart, and recent transactions.  
 
-The system is designed as a **Progressive Web App (PWA)** to ensure responsive, cross-platform usability with secure storage, fast load times, and seamless offline support.
+The system is designed as a **Progressive Web App (PWA)** to ensure responsive, cross-platform usability with secure storage, and fast load times.
 
-It empowers individuals to maintain financial awareness, analyze spending habits, and generate **monthly transaction reports in PDF format**.  
-A **CI/CD pipeline** ensures deployment quality, and integrated QA practices maintain system reliability.
+It empowers individuals to maintain financial awareness, analyze spending habits, and generate **monthly transaction reports in PDF format**. A **CI/CD pipeline** ensures deployment quality, and integrated QA practices maintain system reliability.
 
 ---
 
@@ -40,7 +39,7 @@ This application is intended for **individual users** who want a clear, simple w
 
 ---
 
-# 2. Project Objectives
+## 2. Project Objectives
 
 ## 2.1 Simplify and Centralize Expense Management
 

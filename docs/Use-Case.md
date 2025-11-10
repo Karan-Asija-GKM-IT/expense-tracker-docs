@@ -1,9 +1,54 @@
+# Business Use Cases
+
+Below are the key business use cases for the **Personal Expense Tracker** application.  
+
+---
+
+## 1. Manage Personal Finances
+
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Business Objective** | Enable users to track and manage their income and expenses efficiently. |
+| **Actor** | User |
+| **Pre-condition** | User has registered and logged in successfully. |
+| **Main Flow** | 1. User records income and expenses under some category.<br>2. System stores the transactions.<br>3. User views summary through the dashboard. |
+| **Post-condition** | User gains visibility into spending and overall financial health. |
+| **Business Value** | Increases financial discipline and decision-making through organized record-keeping. |
+
+---
+
+## 2. Analyze Spending Patterns
+
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Business Objective** | Provide users with insights into their spending habits. |
+| **Actor** | User |
+| **Pre-condition** | Transaction data exists in the system. |
+| **Main Flow** | 1. System aggregates data by category and date.<br>2. Generates pie charts for monthly expense.<br>3. Displays insights on dashboard. |
+| **Post-condition** | User identifies major expense areas and adjusts habits. |
+| **Business Value** | Encourages smarter budgeting and financial awareness. |
+
+---
+
+## 3. Generate Monthly Financial Reports
+
+| **Attribute** | **Description** |
+|----------------|-----------------|
+| **Business Objective** | Allow users to generate and export monthly expense reports for personal or professional use. |
+| **Actor** | User |
+| **Pre-condition** | Minimum one month of data is recorded. |
+| **Main Flow** | 1. User selects the month for which report is needed.<br>2. System compiles transactions into a summarized PDF.<br>3. Report is made available for download. |
+| **Post-condition** | PDF report downloaded or shared. |
+| **Business Value** | Provides documentation for budgeting purposes.|
+
+---
+
 # Technical Use Cases
 
 Below are the detailed technical use cases for the **Personal Expense Tracker** application.
 
 ---
-
+   
 ## 1. Register Account
 
 | **Attribute** | **Description** |
@@ -26,7 +71,17 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 
 ---
 
-## 3. View Dashboard
+### 3. Authenticate User
+| Attribute | Description |
+|------------|-------------|
+| **Actor** | System |
+| **Pre-condition** | User provides valid login credentials. |
+| **Main Flow** | 1. System receives credentials from login form.<br>2. Validates credentials against database.<br>3. Generates JWT token for session handling. |
+| **Post-condition** | Authentication token issued for secure session management. |
+
+---
+
+## 4. View Dashboard
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
@@ -37,7 +92,7 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 
 ---
 
-## 4. Add Income/Expense
+## 5. Add Income/Expense
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
@@ -48,7 +103,17 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 
 ---
 
-## 5. Edit or Delete Transaction
+### 6. Validate Data
+| Attribute | Description |
+|------------|-------------|
+| **Actor** | System |
+| **Pre-condition** | User provides input while creating or editing transactions. |
+| **Main Flow** | 1. Check if mandatory fields (amount, category, date) are filled.<br>2. Validate data format and numeric values.<br>3. Ensure no invalid or empty entries are accepted. |
+| **Post-condition** | Data verified before storing in database. |
+
+---
+
+## 7. Edit or Delete Transaction
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
@@ -59,7 +124,7 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 
 ---
 
-## 6. Filter Transactions
+## 8. Filter Transactions
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
@@ -70,7 +135,7 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 
 ---
 
-## 7. Generate Monthly Report
+## 9. Generate Monthly Report
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
@@ -81,7 +146,7 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 
 ---
 
-## 8. Logout
+## 10. Logout
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
@@ -92,4 +157,8 @@ Below are the detailed technical use cases for the **Personal Expense Tracker** 
 
 ---
 
-**Next:** [System Architecture →](architecture.md)
+# Use Case Diagram
+
+
+![Expense Tracker App Use Case Diagram](Use-Case-Diagram-Expense-Tracker.png)
+

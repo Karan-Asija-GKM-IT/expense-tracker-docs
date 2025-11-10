@@ -1,22 +1,22 @@
 # Functional Requirements
 
 
-| **Functionality**              | **Description**                                                                 |
+| **Category**              | **Description**                                                                 |
 |:-------------------------------|:--------------------------------------------------------------------------------|
 | User Registration & Login      | Secure signup/login using email and password.                                  |
 | Dashboard Overview             | Display monthly income, weekly expense pie chart, last month summary, and transactions. |
+| Sidebar Navigation             | Navigate between Overview, Transactions, and Import/Export.                    |
 | Add Income (➕)                 | Record a new income transaction with amount, description, and date.            |
 | Add Expense (➖)                | Record a new expense with category and amount.                                 |
 | Edit/Delete Transactions       | Modify or remove an existing record.                                           |
 | Transaction Filters            | Filter transactions by date range or category.                                 |
 | Report Generation (PDF)        | Export monthly transactions as a downloadable PDF.                             |
-| Sidebar Navigation             | Navigate between Overview, Transactions, and Import/Export.                    |
 | Logout Functionality           | Securely end session and redirect to login page.                               |
 
 
 # Non-functional Requirements
 
-| **Type**         | **Requirement**                                                                                             |
+| **Category**         | **Description**                                                                                             |
 |:-----------------|:------------------------------------------------------------------------------------------------------------|
 | Performance      | The system should load and display data within 3 seconds for standard use.                                  |
 | Usability        | The UI shall be responsive and accessible across devices (desktop, tablet, mobile).                         |
