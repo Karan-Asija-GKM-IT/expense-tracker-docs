@@ -37,8 +37,8 @@ Below are the key business use cases for the **Personal Expense Tracker** applic
 | **Business Objective** | Allow users to generate and export monthly expense reports for personal or professional use. |
 | **Actor** | User |
 | **Pre-condition** | Minimum one month of data is recorded. |
-| **Main Flow** | 1. User selects the month for which report is needed.<br>2. System compiles transactions into a summarized PDF.<br>3. Report is made available for download. |
-| **Post-condition** | PDF report downloaded or shared. |
+| **Main Flow** | 1. User selects the month for which report is needed.<br>2. System compiles transactions into a .csv file.<br>3. Report is made available for download. |
+| **Post-condition** | .CSV downloaded. |
 | **Business Value** | Provides documentation for budgeting purposes.|
 
 ---
@@ -48,119 +48,65 @@ Below are the key business use cases for the **Personal Expense Tracker** applic
 Below are the detailed technical use cases for the **Personal Expense Tracker** application.
 
 ---
-   
-## 1. Register Account
+
+## 1. Login / Register
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
 | **Actor** | User |
-| **Pre-condition** | No existing account. |
-| **Main Flow** | 1. User clicks “Register”.<br>2. Inputs email & password.<br>3. System validates and stores credentials. |
-| **Post-condition** | Account created; redirect to login page. |
+| **Pre-condition** | User must have valid credentials or register a new account. |
+| **Main Flow** | 1. User selects *Login* or *Register* option.<br>2. Provides required details (email, password, etc.).<br>3. System validates credentials or creates a new user account.<br>4. On success, user is redirected to the dashboard. |
+| **Post-condition** | User gains access to their personal expense dashboard. |
 
 ---
 
-## 2. Login
+## 2. View Dashboard
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
 | **Actor** | User |
-| **Pre-condition** | Valid credentials exist. |
-| **Main Flow** | 1. User enters email and password.<br>2. System authenticates.<br>3. Redirect to Dashboard. |
-| **Post-condition** | User session started. |
+| **Pre-condition** | User must be logged in. |
+| **Main Flow** | 1. System fetches and displays user’s income, expense summaries, recent transactions, and comparison charts.<br>2. User can navigate to other modules via side menu. |
+| **Post-condition** | Dashboard data successfully displayed. |
 
 ---
 
-### 3. Authenticate User
-| Attribute | Description |
-|------------|-------------|
-| **Actor** | System |
-| **Pre-condition** | User provides valid login credentials. |
-| **Main Flow** | 1. System receives credentials from login form.<br>2. Validates credentials against database.<br>3. Generates JWT token for session handling. |
-| **Post-condition** | Authentication token issued for secure session management. |
-
----
-
-## 4. View Dashboard
+## 3. Manage Transactions
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
 | **Actor** | User |
-| **Pre-condition** | Logged in. |
-| **Main Flow** | 1. System loads Overview Dashboard.<br>2. Displays income, weekly expenses (pie chart), last month summary, and recent transactions. |
-| **Post-condition** | User views financial snapshot. |
+| **Pre-condition** | User is logged in and has access to transaction module. |
+| **Main Flow** | 1. User navigates to *Transactions* page.<br>2. User can add new transactions (income/expense) with details such as category, amount, description, and date.<br>3. User can filter, edit, or delete existing transactions. |
+| **Post-condition** | Transaction data is updated in the database and reflected on the dashboard. |
 
 ---
 
-## 5. Add Income/Expense
-
-| **Attribute** | **Description** |
-|:---------------|:----------------|
-| **Actor** | User |
-| **Pre-condition** | Logged in. |
-| **Main Flow** | 1. Navigate to Transactions page.<br>2. Click **(Add Transaction)**.<br>3. Select **type** (Income or Expense).<br>4. Enter details (amount, category, date, description).<br>5. Click **“Save.”** |
-| **Post-condition** | Transaction recorded and dashboard updated. |
-
-
----
-
-### 6. Validate Data
-| Attribute | Description |
-|------------|-------------|
-| **Actor** | System |
-| **Pre-condition** | User provides input while creating or editing transactions. |
-| **Main Flow** | 1. Check if mandatory fields (amount, category, date) are filled.<br>2. Validate data format and numeric values.<br>3. Ensure no invalid or empty entries are accepted. |
-| **Post-condition** | Data verified before storing in database. |
-
----
-
-## 7. Edit or Delete Transaction
+## 4. Generate Monthly Report
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
 | **Actor** | User |
-| **Pre-condition** | User is on the Transactions page with an existing transaction list. |
-| **Main Flow** | 1. Select transaction.<br>2. Edit details → Edit OR Click Delete → Confirm.<br>3. System updates or removes record. |
-| **Post-condition** | Data updated in database and UI. |
+| **Pre-condition** | At least one transaction exists for the selected month. |
+| **Main Flow** | 1. User selects a month or date range.<br>2. System calculates total income, total expense, and savings.<br>3. System generates a summary report, downloadable as a .csv file. |
+| **Post-condition** | Monthly report generated and displayed to the user. |
 
 ---
 
-## 8. Filter Transactions
+## 5. Logout
 
 | **Attribute** | **Description** |
 |----------------|-----------------|
 | **Actor** | User |
-| **Pre-condition** | User is on the Transactions page with an existing transaction list. |
-| **Main Flow** | 1. On the Transactions page, filter the transaction based on category.<br>2. System automatically updates and displays the filtered transactions. |
-| **Post-condition** | Filtered transaction list displayed on the Transactions page. |
-
-
----
-
-## 9. Generate Monthly Report
-
-| **Attribute** | **Description** |
-|----------------|-----------------|
-| **Actor** | User |
-| **Pre-condition** | At least one month’s transactions. |
-| **Main Flow** | 1. Navigate to Import/Export.<br>2. Select month.<br>3. System fetches and aggregates data.<br>4. PDF report generated for download. |
-| **Post-condition** | Report saved locally or viewed on-screen. |
-
----
-
-## 10. Logout
-
-| **Attribute** | **Description** |
-|----------------|-----------------|
-| **Actor** | User |
-| **Pre-condition** | Active session. |
-| **Main Flow** | 1. Click “Sign Out”.<br>2. System terminates session and redirects to login. |
-| **Post-condition** | User logged out securely. |
+| **Pre-condition** | User is logged in. |
+| **Main Flow** | 1. User clicks on *Logout* button.<br>2. System invalidates user session and redirects to the login screen. |
+| **Post-condition** | User is securely logged out of the system. |
 
 ---
 
 # Use Case Diagram
 
 
-![Expense Tracker App Use Case Diagram](Use-Case-Diagram-Expense-Tracker.png)
+![Expense Tracker App Use Case Diagram](Use-Case-Diagram copy.png)
 
+**Next:** [Data Modeling ->](Data-Modeling.md)

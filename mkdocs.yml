@@ -4,5 +4,21 @@ nav:
   - Scope: scope.md
   - Requirement: Requirements.md
   - Use Case: Use-Case.md
-theme: 
+  - Data Modeling: Data-Modeling.md
+  - Data Flow Diagram: Data-Flow.md
+  - Security: Security.md
+  - Architecture: Architecture.md
+  - Tech Stack: Tech-Stack.md
+theme:
   name: material
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+
+
+

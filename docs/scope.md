@@ -46,14 +46,14 @@ A persistent left-side menu providing quick access to main modules:
     
 *  **Transactions** – Detailed transaction list and management.
     
-*  **Import/Export** – Generate and download PDF reports of monthly transactions.
+*  **Import/Export** – Generate and download .csv file of monthly transactions.
     
 
 ### 6. Transactions Page
 
 * Dedicated page to view, add, and manage all transactions.
 
-* A single **Add Transaction** button allows users to record both income and expense entries by selecting the transaction type.
+* A single **Add Transaction** button allows users to record both income and expense entries by clicking the '+' for income and '-' for expense.
 
 * Includes **Filter Functionality** to view older transactions.
 
@@ -61,7 +61,7 @@ A persistent left-side menu providing quick access to main modules:
 
 ### 7. Report Generation
 
-*   Users can **export monthly financial summaries** as PDF reports.
+*   Users can **export monthly financial summaries** as .csv files.
     
 *   Reports include categorized breakdowns, totals, and summary visuals.
     

@@ -61,10 +61,11 @@ The system is implemented as a **Progressive Web App (PWA)**, enabling seamless 
 
 ---
 
-## 2.4 Maintain Secure and Reliable Storage Using MongoDB
+## 2.4 Maintain Secure and Reliable Storage Using PostgreSQL
 
-MongoDB provides a flexible NoSQL database solution for efficient data management.  
-It ensures secure, scalable, and fast storage of user transactions and authentication details.
+PostgreSQL provides a powerful and reliable relational database solution for structured data management.
+It ensures data integrity, security, and scalability while efficiently handling user transactions, authentication details, and application-related records.
+Its ACID compliance and robust query capabilities make it ideal for maintaining accurate financial records in the Personal Expense Tracker.
 
 ---
 
