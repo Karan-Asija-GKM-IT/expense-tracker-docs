@@ -54,14 +54,7 @@ This categorization enhances organization and allows for precise tracking of spe
 
 ---
 
-
-## 2.3 Offer Cross-Platform Access via PWA
-
-The system is implemented as a **Progressive Web App (PWA)**, enabling seamless use across web and mobile devices.  
-
----
-
-## 2.4 Maintain Secure and Reliable Storage Using PostgreSQL
+## 2.3 Maintain Secure and Reliable Storage Using PostgreSQL
 
 PostgreSQL provides a powerful and reliable relational database solution for structured data management.
 It ensures data integrity, security, and scalability while efficiently handling user transactions, authentication details, and application-related records.
@@ -69,7 +62,7 @@ Its ACID compliance and robust query capabilities make it ideal for maintaining 
 
 ---
 
-## 2.5 Implement CI/CD, Manual Testing, and Security Scans
+## 2.4 Implement CI/CD, Manual Testing, and Security Scans
 
 A CI/CD pipeline automates deployment and updates, ensuring code quality and reliability.  
 Manual testing and security scans are conducted regularly to identify bugs, improve performance, and maintain overall system security.

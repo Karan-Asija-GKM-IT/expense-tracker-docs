@@ -9,6 +9,7 @@ nav:
   - Security: Security.md
   - Architecture: Architecture.md
   - Tech Stack: Tech-Stack.md
+  - Test Plan: Test-Plan.md
 theme:
   name: material
 
