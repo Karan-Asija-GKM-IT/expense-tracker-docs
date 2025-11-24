@@ -11,6 +11,7 @@ nav:
   - Tech Stack: Tech-Stack.md
   - Test Plan: Test-Plan.md
   - CI/CD Pipeline and Deployment Flow: Deployment.md
+  - Scans & Test Coverage: Scans.md
 theme:
   name: material
 

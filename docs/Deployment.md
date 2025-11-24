@@ -23,21 +23,46 @@ Once the push is detected, GitHub Actions automatically begins the CI/CD pipelin
 
 When code is pushed to the branch, the following jobs run **automatically**:
 
----
 
-### **a. Backend Unit Tests (Jest)**  
+### a. Backend Unit Tests (Jest)
 Job: `backend-tests`
 
 - Installs dependencies  
 - Runs Jest test cases  
 - Generates code coverage  
 - Uploads coverage report to GitHub Actions Artifacts  
+```
+jobs:
+  backend-tests:
+    name: Run Backend Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.9.0
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Jest Tests with Coverage
+        run: npm run test -- --coverage
+
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-coverage-report
+          path: coverage
+```
 This ensures new changes do not break existing backend logic.
 
 ---
 
-### **b. Security Scanning (SAST with Trivy)**  
+### b. Security Scanning (SAST with Trivy)
 Job: `trivy-sast`
 
 - Scans the full codebase for:
@@ -47,10 +72,25 @@ Job: `trivy-sast`
 - Fails the pipeline if severe issues are detected
 
 This ensures the code pushed into the branch is secure.
-
+```
+trivy-sast:
+    name: Trivy SAST Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Trivy SAST
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          scanners: "secret,misconfig"
+          scan-ref: "."
+          exit-code: "1"
+          severity: "CRITICAL,HIGH"
+```
 ---
 
-### **c. Deployment to AWS EC2**  
+### c. Deployment to AWS EC2
 Job: `deploy`
 
 If the previous jobs succeed, deployment begins automatically:
@@ -62,8 +102,29 @@ If the previous jobs succeed, deployment begins automatically:
 - Confirms successful deployment  
 
 This provides a fully automated deployment cycle.
-
-
+```
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+            echo "---- Pulling latest changes ----"
+            cd /expense-tracker-backend
+            git fetch --all
+            git reset --hard origin/feat/tests
+            echo "---- Installing dependencies ----"
+            npm install --production
+            echo "---- Restarting server ----"
+            pm2 restart all
+            echo "---- Deployment Completed Successfully ----"
+```
 
 ### 4. Summary of the Merge Workflow
 
@@ -83,3 +144,4 @@ This provides a fully automated deployment cycle.
 
 ---
 
+**Next:** [Scans & Test Coverage ->](Scans.md)
