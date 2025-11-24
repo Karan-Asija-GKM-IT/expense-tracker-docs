@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../scope/">
+        <link rel="prev" href="../Test-Plan/">
       
       
-        <link rel="next" href="../Use-Case/">
+        <link rel="next" href="../Scans/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Requirement - Expense Tracker App</title>
+        <title>CI/CD Pipeline and Deployment Flow - Expense Tracker App</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#functional-requirements" class="md-skip">
+        <a href="#code-merge-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Requirement
+              CI/CD Pipeline and Deployment Flow
             
           </span>
         </div>
@@ -235,19 +235,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
         
   
   
@@ -258,7 +249,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -421,10 +411,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Deployment/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CI/CD Pipeline and Deployment Flow
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -435,6 +445,111 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-merge-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Merge Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Merge Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-branching-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Branching Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-code-update-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Code Update Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automated-pipeline-stages-on-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Automated Pipeline Stages on Push
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-backend-unit-tests-jest" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Backend Unit Tests (Jest)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-security-scanning-sast-with-trivy" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Security Scanning (SAST with Trivy)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-deployment-to-aws-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. Deployment to AWS EC2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-summary-of-the-merge-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Summary of the Merge Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -478,8 +593,101 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-merge-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Merge Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Merge Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-branching-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Branching Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-code-update-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Code Update Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automated-pipeline-stages-on-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Automated Pipeline Stages on Push
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-backend-unit-tests-jest" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Backend Unit Tests (Jest)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-security-scanning-sast-with-trivy" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Security Scanning (SAST with Trivy)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-deployment-to-aws-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. Deployment to AWS EC2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-summary-of-the-merge-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Summary of the Merge Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -495,50 +703,167 @@
 
 
 
-<h1 id="functional-requirements">Functional Requirements</h1>
+  <h1>CI/CD Pipeline and Deployment Flow</h1>
+
+<h2 id="code-merge-workflow">Code Merge Workflow</h2>
+<p>This project uses a simplified and automated merge workflow designed around direct branch pushes.<br />
+The CI/CD pipeline is triggered **whenever code is pushed to the <code>feat/tests</code> branch`.<br />
+This ensures that all updates to this branch automatically go through testing, security scanning, and deployment.</p>
+<h3 id="1-branching-strategy">1. Branching Strategy</h3>
+<p>The project follows a minimal branching model:</p>
+<ul>
+<li><strong>feat/tests</strong> — The main development branch where CI/CD is triggered.</li>
+<li><strong>Other feature branches</strong> (optional) may be created locally but must be pushed into <code>feat/tests</code> for deployment.</li>
+</ul>
+<h3 id="2-code-update-flow">2. Code Update Flow</h3>
+<ol>
+<li>Developer writes code locally.</li>
+<li>Commits the changes.</li>
+<li>Pushes directly to the <code>feat/tests</code> branch.</li>
+</ol>
+<p>Once the push is detected, GitHub Actions automatically begins the CI/CD pipeline.</p>
+<h3 id="3-automated-pipeline-stages-on-push">3. Automated Pipeline Stages on Push</h3>
+<p>When code is pushed to the branch, the following jobs run <strong>automatically</strong>:</p>
+<h3 id="a-backend-unit-tests-jest">a. Backend Unit Tests (Jest)</h3>
+<p>Job: <code>backend-tests</code></p>
+<ul>
+<li>Installs dependencies  </li>
+<li>Runs Jest test cases  </li>
+<li>Generates code coverage  </li>
+<li>Uploads coverage report to GitHub Actions Artifacts<br />
+<div class="highlight"><pre><span></span><code>jobs:
+  backend-tests:
+    name: Run Backend Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.9.0
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Jest Tests with Coverage
+        run: npm run test -- --coverage
+
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-coverage-report
+          path: coverage
+</code></pre></div>
+This ensures new changes do not break existing backend logic.</li>
+</ul>
+<hr />
+<h3 id="b-security-scanning-sast-with-trivy">b. Security Scanning (SAST with Trivy)</h3>
+<p>Job: <code>trivy-sast</code></p>
+<ul>
+<li>Scans the full codebase for:</li>
+<li>Secrets  </li>
+<li>Misconfigurations  </li>
+<li>High/Critical vulnerabilities  </li>
+<li>Fails the pipeline if severe issues are detected</li>
+</ul>
+<p>This ensures the code pushed into the branch is secure.
+<div class="highlight"><pre><span></span><code>trivy-sast:
+    name: Trivy SAST Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Trivy SAST
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: &quot;fs&quot;
+          scanners: &quot;secret,misconfig&quot;
+          scan-ref: &quot;.&quot;
+          exit-code: &quot;1&quot;
+          severity: &quot;CRITICAL,HIGH&quot;
+</code></pre></div></p>
+<hr />
+<h3 id="c-deployment-to-aws-ec2">c. Deployment to AWS EC2</h3>
+<p>Job: <code>deploy</code></p>
+<p>If the previous jobs succeed, deployment begins automatically:</p>
+<ul>
+<li>Connects to EC2 using SSH  </li>
+<li>Pulls the latest code from the <code>feat/tests</code> branch  </li>
+<li>Installs production dependencies  </li>
+<li>Restarts the application using PM2  </li>
+<li>Confirms successful deployment  </li>
+</ul>
+<p>This provides a fully automated deployment cycle.
+<div class="highlight"><pre><span></span><code>  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} &lt;&lt; &#39;EOF&#39;
+            echo &quot;---- Pulling latest changes ----&quot;
+            cd /expense-tracker-backend
+            git fetch --all
+            git reset --hard origin/feat/tests
+            echo &quot;---- Installing dependencies ----&quot;
+            npm install --production
+            echo &quot;---- Restarting server ----&quot;
+            pm2 restart all
+            echo &quot;---- Deployment Completed Successfully ----&quot;
+</code></pre></div></p>
+<h3 id="4-summary-of-the-merge-workflow">4. Summary of the Merge Workflow</h3>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><strong>Category</strong></th>
-<th style="text-align: left;"><strong>Description</strong></th>
+<th>Step</th>
+<th>Action</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>User Registration &amp; Login</strong></td>
-<td style="text-align: left;">Secure signup/login using email and password.</td>
+<td>1</td>
+<td>Push to <code>feat/tests</code></td>
+<td>Developer pushes code to this branch</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Dashboard Overview</strong></td>
-<td style="text-align: left;">Display monthly income, weekly expense pie chart, last month summary, and transactions.</td>
+<td>2</td>
+<td>Backend Tests Run</td>
+<td>Jest tests + Coverage</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Sidebar Navigation</strong></td>
-<td style="text-align: left;">Navigate between Overview, Transactions, and Import/Export.</td>
+<td>3</td>
+<td>Security Scan</td>
+<td>Trivy SAST check</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Add Transaction</strong></td>
-<td style="text-align: left;">Add a new transaction by entering amount, description, date, and selecting type (Income or Expense). The category list updates dynamically based on the selected type.</td>
+<td>4</td>
+<td>Deployment</td>
+<td>Automatic EC2 deployment via SSH</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Edit/Delete Transactions</strong></td>
-<td style="text-align: left;">Modify or remove an existing record.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Transaction Filters</strong></td>
-<td style="text-align: left;">Filter transactions by date range or category.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Report Generation</strong></td>
-<td style="text-align: left;">Export monthly transactions as a downloadable CSV.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Logout Functionality</strong></td>
-<td style="text-align: left;">Securely end session and redirect to login page.</td>
+<td>5</td>
+<td>App Live</td>
+<td>Updated backend live after PM2 restart</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Next:</strong> <a href="../Use-Case/">Use Cases -&gt;</a></p>
+<h3 id="5-notes">5. Notes</h3>
+<ul>
+<li>No Pull Requests (PRs) are used in this workflow.  </li>
+<li>Deployment only happens for the <code>feat/tests</code> branch.  </li>
+<li>The workflow ensures code quality through test execution and SAST scanning before deployment.</li>
+</ul>
+<hr />
+<p><strong>Next:</strong> <a href="../Scans/">Scans &amp; Test Coverage -&gt;</a></p>
 
 
 
