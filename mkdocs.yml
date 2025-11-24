@@ -10,6 +10,7 @@ nav:
   - Architecture: Architecture.md
   - Tech Stack: Tech-Stack.md
   - Test Plan: Test-Plan.md
+  - CI/CD Pipeline and Deployment Flow: Deployment.md
 theme:
   name: material
 
