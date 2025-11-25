@@ -138,8 +138,7 @@ deploy:
 | 5 | App Live | Updated backend live after PM2 restart |
 
 ### 5. Notes
-
-- No Pull Requests (PRs) are used in this workflow.  
+  
 - Deployment only happens for the `feat/tests` branch.  
 - The workflow ensures code quality through test execution and SAST scanning before deployment.
 
