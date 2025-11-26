@@ -490,6 +490,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SAST Scan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-used-trivy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Used: Trivy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -499,6 +514,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="DAST Scan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-used-owasp-zap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Used: OWASP ZAP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -507,6 +537,21 @@
       Test Coverage Report
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Test Coverage Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-coverage-report-includes" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the Coverage Report Includes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -560,6 +605,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SAST Scan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-used-trivy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Used: Trivy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -569,6 +629,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="DAST Scan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-used-owasp-zap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Used: OWASP ZAP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -577,6 +652,21 @@
       Test Coverage Report
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Test Coverage Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-coverage-report-includes" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the Coverage Report Includes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -607,12 +697,65 @@
 
 <h1 id="scans-test-coverage">Scans &amp; Test Coverage</h1>
 <h2 id="sast-scan">SAST Scan</h2>
+<p><strong>SAST</strong> refers to scanning the application's source code, configuration files, and dependencies <strong>without executing the application</strong>.<br />
+Its purpose is to identify security issues early in the development lifecycle.</p>
+<h4 id="tool-used-trivy">Tool Used: Trivy</h4>
+<p>Trivy is an open-source security scanner developed by Aqua Security.<br />
+It is used to detect:</p>
+<ul>
+<li>Vulnerable or outdated packages  </li>
+<li>Hard-coded secrets  </li>
+<li>Misconfigurations in code or infrastructure files  </li>
+<li>Critical or High-severity issues in the codebase  </li>
+</ul>
+<p>Trivy was chosen because it is:</p>
+<ul>
+<li>Fast and lightweight.</li>
+<li>Easy to integrate with GitHub Actions.</li>
+<li>Provides accurate vulnerability reports.</li>
+</ul>
 <p><img alt="SAST Scan" src="../Trivy-Scan-SAST.png" /></p>
 <hr />
 <h2 id="dast-scan">DAST Scan</h2>
+<p><strong>DAST</strong> scans the application <em>after it is deployed</em> to identify runtime security weaknesses.<br />
+It analyzes the live API by sending automated attack patterns and detecting vulnerabilities such as:</p>
+<ul>
+<li>Authentication weaknesses  </li>
+<li>Cross-Site Scripting (XSS)  </li>
+<li>SQL Injection  </li>
+<li>Broken access control  </li>
+<li>Missing or insecure security headers  </li>
+</ul>
+<h4 id="tool-used-owasp-zap">Tool Used: OWASP ZAP</h4>
+<p><strong>OWASP ZAP (Zed Attack Proxy)</strong> is the DAST tool used in this project. It is:</p>
+<ul>
+<li>One of the most widely used open-source penetration testing tools.  </li>
+<li>Actively maintained by the OWASP foundation.</li>
+<li>Capable of scanning real HTTP endpoints.  </li>
+<li>Able to generate detailed vulnerability and risk reports.  </li>
+</ul>
+<p>OWASP ZAP is ideal for API security scanning because it supports:</p>
+<ul>
+<li>GET and POST endpoints.  </li>
+<li>Authenticated and unauthenticated scans.  </li>
+<li>Passive and active scanning.  </li>
+<li>OWASP Top 10 vulnerability coverage.  </li>
+</ul>
 <p><img alt="DAST Scan" src="../DAST-SCAN.png" /></p>
 <hr />
 <h2 id="test-coverage-report">Test Coverage Report</h2>
+<p>Test coverage is an important metric used to evaluate how much of the backend codebase is executed during automated testing.<br />
+It helps ensure that critical business logic, services, utilities, and controllers are properly tested before deployment.</p>
+<p>The project uses <strong>Jest</strong> to generate detailed coverage reports every time tests run—both locally and inside the CI/CD pipeline.</p>
+<h4 id="what-the-coverage-report-includes">What the Coverage Report Includes</h4>
+<p>The Jest coverage report provides insights into:</p>
+<ul>
+<li><strong>Line Coverage</strong> – Percentage of code lines executed  </li>
+<li><strong>Statement Coverage</strong> – Percentage of executed statements  </li>
+<li><strong>Function Coverage</strong> – How many functions were invoked  </li>
+<li><strong>Branch Coverage</strong> – Coverage of <code>if</code>, <code>switch</code>, and logical branches  </li>
+</ul>
+<p>This allows developers to identify untested code paths and improve overall quality.</p>
 <p><img alt="Test Coverage Report" src="../Test-Coverage-Report.png" /></p>
 <hr />
 <h2 id="github-actions-report">Github Actions Report</h2>

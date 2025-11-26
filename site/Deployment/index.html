@@ -737,7 +737,7 @@
 
 <h2 id="code-merge-workflow">Code Merge Workflow</h2>
 <p>This project uses a simplified and automated merge workflow designed around direct branch pushes.<br />
-The CI/CD pipeline is triggered **whenever code is pushed to the <code>feat/tests</code> branch`.<br />
+The CI/CD pipeline is triggered whenever code is pushed to the <code>feat/tests</code> branch.<br />
 This ensures that all updates to this branch automatically go through testing, security scanning, and deployment.</p>
 <h3 id="1-branching-strategy">1. Branching Strategy</h3>
 <p>The project follows a minimal branching model:</p>
@@ -887,7 +887,6 @@ This ensures that all updates to this branch automatically go through testing, s
 </table>
 <h3 id="5-notes">5. Notes</h3>
 <ul>
-<li>No Pull Requests (PRs) are used in this workflow.  </li>
 <li>Deployment only happens for the <code>feat/tests</code> branch.  </li>
 <li>The workflow ensures code quality through test execution and SAST scanning before deployment.</li>
 </ul>
