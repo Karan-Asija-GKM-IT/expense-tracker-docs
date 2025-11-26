@@ -1,7 +1,7 @@
 ## Code Merge Workflow
 
 This project uses a simplified and automated merge workflow designed around direct branch pushes.  
-The CI/CD pipeline is triggered **whenever code is pushed to the `feat/tests` branch`.  
+The CI/CD pipeline is triggered whenever code is pushed to the `feat/tests` branch.  
 This ensures that all updates to this branch automatically go through testing, security scanning, and deployment.
 
 ### 1. Branching Strategy
